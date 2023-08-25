@@ -9,22 +9,26 @@ public class Main {
         short num1 = 128;
         int num2 = 32768;
         long num3 = 2147483648L;
+        float num4 = 0.1F;
+        double num5 = 0.1234567890;
 
         System.out.println("Значение переменной с типом byte равно " + num0 );
         System.out.println("Значение переменной с типом short равно " + num1 );
         System.out.println("Значение переменной с типом int равно " + num2 );
         System.out.println("Значение переменной с типом long равно " + num3 );
+        System.out.println("Значение переменной с типом float равно " + num4 );
+        System.out.println("Значение переменной с типом double равно " + num5 );
         System.out.println("--------------------------------------------------" );
 
         //Задача 2.
 
-        float Num = 27.12f;
-        long Num0 = 987678965549L;
-        float Num1 = 2.786f;
-        short Num2 = 569;
-        short Num3 = -159;
-        short Num4 = 27897;
-        byte Num5 = 67;
+        float number = 27.12f;
+        long number0 = 987678965549L;
+        float number1 = 2.786f;
+        short number2 = 569;
+        short number3 = -159;
+        short number4 = 27897;
+        byte number5 = 67;
 
 
         //Задача 3.
@@ -42,37 +46,44 @@ public class Main {
 
         //2 минуты = 16 бутылок
         byte min1 = 16 / 2; //1 min   = 8
-        short min20 = 8 * 20;
+        short min20 = (short) (min1 * 20);
         System.out.println("За 20 минут машина произвела " + min20 + " бутылок");
         short minInOneHourse = 24 * 60; //minyt v 24 chasah  = 1440
-        short sytki = 1440 * 8;
+        short sytki = (short) (minInOneHourse * min1);
         System.out.println("За сутки машина произвела " + sytki + " бутылок");
-        short minInThreeDay = 1440 * 3; // minut v 3 dnyah   = 4320
-        int day3 = 4320 * 8;
+        short minInThreeDay = (short) (minInOneHourse * 3); // minut v 3 dnyah   = 4320
+        int day3 = minInThreeDay * min1;
         System.out.println("За 3 дны машина произвела " + day3 + " бутылок");
-        int odinMesyats = 1440 * 30; //minyt v mesyatse  = 43 200
-        int OneMouth = 43200 * 8;
+        int odinMesyats = minInOneHourse * 30; //minyt v mesyatse  = 43 200
+        int OneMouth = odinMesyats * min1;
         System.out.println("За один месяц машина произвела " + OneMouth + " бутылок");
         System.out.println("--------------------------------------------------" );
 
         //Задача 5.
         // 1 класс = 2 банки белой + 4 банки коричневой краски = 6 красов общее
-        byte paintsForOneClass = 120 / 6;       // 20 klassov vsego
-        byte wightPaint = 20 * 2;           //40 beloi kraski vsego
-        byte korichevoiPaint = 20 * 4;      // 80 korichnevoi kraski
+        byte totalPaint = 120;
+        byte wightPaints = 2;
+        byte brownPaints = 4;
+        byte paintsForOneClass = (byte) (totalPaint / (wightPaints + brownPaints));       // 20 klassov vsego
+        byte wightPaint = (byte) (paintsForOneClass * wightPaints);           //40 beloi kraski vsego
+        byte korichevoiPaint = (byte) (paintsForOneClass * brownPaints);      // 80 korichnevoi kraski
         System.out.println("В школе, где " + paintsForOneClass + " классов, нужно " + wightPaint + " банок белой краски и " + korichevoiPaint + " банок коричневой краски");
         System.out.println("--------------------------------------------------" );
 
 
 
         //Задча 6.
-        short banana = 5 * 80; //gramm v 5 bananah
+        byte oneBanana = 80;
+        short banana = (short) (5 * oneBanana); //gramm v 5 bananah
         System.out.println("Banana " + banana +" gramm");
-        short milk = 105 * 2; // gramm v 200 ml
+        byte mlInOneMilk = 105;
+        short milk = (short) (mlInOneMilk * 2); // gramm v 200 ml
         System.out.println("Milk "+ milk + " gramm");
-        short iceCream = 2 * 100; // gramm v morojenom
+        byte icePlombir = 100;
+        short iceCream = (short) (2 * icePlombir); // gramm v morojenom
         System.out.println("Ice cram " + iceCream + " gramm");
-        short egg = 4 * 70; // gramm v 4 yaishah
+        byte oneEgg = 70;
+        short egg = (short) (4 * oneEgg); // gramm v 4 yaishah
         System.out.println("Egg " + egg + " gramm");
         int totalGramm =  (banana + milk + iceCream + egg);
         float kg =  (float) totalGramm / 1000;
@@ -86,6 +97,8 @@ public class Main {
         System.out.println(evryDay250 + " Дней потребутеся спортсмену что бы сбросить вес если каждый день по 250 грамм");
         short evryDay500 = (short) (skinytGramm / 500);
         System.out.println(evryDay500 + " Дней потребутеся спортсмену что бы сбросить вес если каждый день по 500 грамм");
+        short average = (short) ((evryDay500 + evryDay250) / 2);
+        System.out.println(average + " дней в среднем потребуется спортсмену что бы сбросить вес");
         System.out.println("--------------------------------------------------" );
 
         //Задача 8.
@@ -98,9 +111,11 @@ public class Main {
         var denisOneYear = denis * 12;              // узнали годовую зп со старой зп
         var kristinaOneYear = kristina * 12;
 
-        var mashaRaiseSalary = masha * 0.1 + masha;
-        var denisRaiseSalay = denis * 0.1 + denis;          //подняли зп на 10%
-        var kristinaRaiseSalay = kristina * 0.1 + kristina;
+        var tenProcent = 0.1;
+
+        var mashaRaiseSalary = masha * tenProcent + masha;
+        var denisRaiseSalay = denis * tenProcent + denis;          //подняли зп на 10%
+        var kristinaRaiseSalay = kristina * tenProcent + kristina;
 
         var mashaAfterUpSalary = mashaRaiseSalary * 12;
         var denisAfterUpSalary = denisRaiseSalay * 12;      //годовая зп после поднятия зп
